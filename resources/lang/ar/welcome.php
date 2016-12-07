@@ -44,5 +44,7 @@ return [
     'users_edit'    => 'تعديل الأعضاء',
     'users_show'    => 'عرض الأعضاء',
     'users_remove'  => 'حذف الأعضاء',
+    'select_role'   => 'حدد الصلاحية',
+    'created_msg'   => 'تم تسجيل العضو بنجاح'
 
 ];

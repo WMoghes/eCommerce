@@ -9,3 +9,16 @@
     float: right;
     left: auto;
 }
+/*.pull-right, .navbar-right {*/
+    /*float: right !important;*/
+/*}*/
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: right;
+}
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+    left: 12px;
+    right: auto;
+}
+.bootstrap-select>.dropdown-toggle {
+    padding-right: 12px;
+}

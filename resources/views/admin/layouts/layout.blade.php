@@ -231,17 +231,7 @@
                         </div>
 
                         <h4 class="page-title">@yield('page_title')</h4>
-                        <ol class="breadcrumb">
-                            <li>
-                                <a href="#">Ubold</a>
-                            </li>
-                            <li>
-                                <a href="#">Pages</a>
-                            </li>
-                            <li class="active">
-                                @yield('page_title')
-                            </li>
-                        </ol>
+                        @yield('content_header')
                     </div>
                 </div>
 

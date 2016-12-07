@@ -11,12 +11,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('welcome.register') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
-
+                    {!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'url' => url('/register')]) !!}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <div class="col-sm-9">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                {!! Form::text('name', old('name'), ['class' => 'form-control', 'id' => 'name']) !!}
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -30,7 +28,7 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                             <div class="col-sm-9">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                {!! Form::email('email', old('email'), ['class' => 'form-control', 'id' => 'email']) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -44,7 +42,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                             <div class="col-sm-9">
-                                <input id="password" type="password" class="form-control" name="password">
+                                {!! Form::password('password', ['class' => 'form-control', 'id' => 'password']) !!}
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -58,7 +56,7 @@
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
 
                             <div class="col-sm-9">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                {!! Form::password('password_confirmation', ['class' => 'form-control', 'id' => 'password-confirm']) !!}
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
@@ -76,7 +74,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

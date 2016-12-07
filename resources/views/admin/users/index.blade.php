@@ -16,6 +16,17 @@
     {{ trans('welcome.dashboard') }}
 @endsection
 
+@section('content_header')
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ route('dashboard') }}">{{ trans('welcome.dashboard') }}</a>
+        </li>
+        <li class="active">
+            {{ trans('welcome.users') }}
+        </li>
+    </ol>
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-sm-12">
