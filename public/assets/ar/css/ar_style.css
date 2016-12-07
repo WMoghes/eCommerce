@@ -1,0 +1,11 @@
+.checkbox label, .radio label {
+    padding-right: 20px;
+}
+.navbar-custom {
+    background-color: #2f3e47;
+}
+.dropdown-menu {
+    text-align: right;
+    float: right;
+    left: auto;
+}
