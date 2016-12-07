@@ -206,50 +206,7 @@
     </div>
     <!-- Top Bar End -->
 
-    <!-- ========== Left Sidebar Start ========== -->
-
-    <div class="left side-menu">
-        <div class="sidebar-inner slimscrollleft">
-            <!--- Divider -->
-            <div id="sidebar-menu">
-                <ul>
-
-                    <li class="text-muted menu-title">Navigation</li>
-
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-home"></i> <span> Dashboard </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Dashboard 1</a></li>
-                            <li><a href="dashboard_2.html">Dashboard 2</a></li>
-                            <li><a href="dashboard_3.html">Dashboard 3</a></li>
-                            <li><a href="dashboard_4.html">Dashboard 4</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Forms </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="form-elements.html">General Elements</a></li>
-                            <li><a href="form-advanced.html">Advanced Form</a></li>
-                            <li><a href="form-validation.html">Form Validation</a></li>
-                            <li><a href="form-pickers.html">Form Pickers</a></li>
-                            <li><a href="form-wizard.html">Form Wizard</a></li>
-                            <li><a href="form-mask.html">Form Masks</a></li>
-                            <li><a href="form-summernote.html">Summernote</a></li>
-                            <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
-                            <li><a href="form-code-editor.html">Code Editor</a></li>
-                            <li><a href="form-uploads.html">Multiple File Upload</a></li>
-                            <li><a href="form-xeditable.html">X-editable</a></li>
-                            <li><a href="form-image-crop.html">Image Crop</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <!-- Left Sidebar End -->
+    @include('admin.layouts.navbar')
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->

@@ -28,4 +28,5 @@ Route::group(['middleware' => ['web', 'admin']], function(){
         'uses'          => 'AdminController@index',
         'as'            => 'dashboard'
     ]);
+    Route::resource('adminpanel/users', 'UsersController');
 });

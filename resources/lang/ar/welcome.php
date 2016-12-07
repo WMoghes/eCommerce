@@ -38,5 +38,11 @@ return [
     'profile'       => 'الصفحة الشخصية',
     'settings'      => 'الإعدادات',
     'lock_screen'   => 'قفل الشاشة',
-    'show_users'    => 'عرض المستخدمين',
+    'users_control' => 'لوحة التحكم في الأعضاء',
+    'users'         => 'الأعضاء',
+    'users_create'  => 'إنشاء الأعضاء',
+    'users_edit'    => 'تعديل الأعضاء',
+    'users_show'    => 'عرض الأعضاء',
+    'users_remove'  => 'حذف الأعضاء',
+
 ];
