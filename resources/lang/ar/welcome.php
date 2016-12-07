@@ -38,4 +38,5 @@ return [
     'profile'       => 'الصفحة الشخصية',
     'settings'      => 'الإعدادات',
     'lock_screen'   => 'قفل الشاشة',
+    'show_users'    => 'عرض المستخدمين',
 ];

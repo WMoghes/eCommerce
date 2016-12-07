@@ -22,7 +22,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     {!! Html::script('admin/assets/js/modernizr.min.js') !!}
-
+    @yield('header')
 </head>
 
 <body class="fixed-left">
@@ -288,7 +288,7 @@
                     </div>
                 </div>
 
-
+            @yield('content')
 
 
             </div> <!-- container -->
@@ -436,6 +436,6 @@
 {!! Html::script('admin/assets/js/jquery.scrollTo.min.js') !!}
 {!! Html::script('admin/assets/js/jquery.core.js') !!}
 {!! Html::script('admin/assets/js/jquery.app.js') !!}
-
+@yield('script')
 </body>
 </html>

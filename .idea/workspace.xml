@@ -68,11 +68,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27261615">
-              <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.88889">
+              <caret line="440" column="7" selection-start-line="440" selection-start-column="7" selection-end-line="440" selection-end-column="7" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/home/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7432763">
+              <caret line="535" column="24" selection-start-line="535" selection-start-column="24" selection-end-line="535" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -81,8 +95,8 @@
       <file leaf-file-name="welcome.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/lang/ar/welcome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.916667">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+            <state vertical-scroll-proportion="-11.055555">
+              <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -114,7 +128,6 @@
         <option value="$PROJECT_DIR$/public/assets/ar/css/ar_style.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/home/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
@@ -123,8 +136,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/IsUserAdmin.php" />
-        <option value="$PROJECT_DIR$/resources/lang/ar/welcome.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/ar/welcome.php" />
+        <option value="$PROJECT_DIR$/public/admin/assets/pages/datatables.init.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/home/index.blade.php" />
       </list>
     </option>
   </component>
@@ -256,7 +271,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="welcome&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/lang/ar/welcome.php&#10;layout&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/admin/layouts/layout.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/auth/login.blade.php&#10;create&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/database/migrations/2014_10_12_000000_create_users_table.php&#10;user&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/database/migrations/2014_10_12_000000_create_users_table.php&#10;IsUs&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/layouts/app.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/home.blade.php&#10;Home&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/Controllers/HomeController.php&#10;index&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/admin/home/index.blade.php&#10;Admin&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/routes.php&#10;ar_&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/public/assets/ar/css/ar_style.css&#10;rout&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/routes.php&#10;styl&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/public/assets/css/style.css" />
+    <property name="SearchEverywhereHistoryKey" value="inde&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/admin/home/index.blade.php&#10;welcome&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/lang/ar/welcome.php&#10;layout&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/admin/layouts/layout.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/auth/login.blade.php&#10;create&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/database/migrations/2014_10_12_000000_create_users_table.php&#10;user&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/database/migrations/2014_10_12_000000_create_users_table.php&#10;IsUs&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/layouts/app.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/home.blade.php&#10;Home&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/Controllers/HomeController.php&#10;index&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/resources/views/admin/home/index.blade.php&#10;Admin&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/routes.php&#10;ar_&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/public/assets/ar/css/ar_style.css&#10;rout&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/app/Http/routes.php&#10;styl&#9;FILE&#9;file://C:/wamp/www/laravel/ecommerce/public/assets/css/style.css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -463,14 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/home/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9166667">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -567,18 +574,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.88889">
+          <caret line="440" column="7" selection-start-line="440" selection-start-column="7" selection-end-line="440" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/ar/welcome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.916667">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        <state vertical-scroll-proportion="-11.055555">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/layout.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/admin/assets/plugins/datatables/dataTables.bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27261615">
-          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.042787287">
+          <caret line="1" column="52" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/assets/plugins/datatables/vfs_fonts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/assets/plugins/datatables/buttons.bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47066015">
+          <caret line="6" column="0" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/assets/pages/datatables.init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0245901">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/assets/plugins/datatables/dataTables.colVis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6557377">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7432763">
+          <caret line="535" column="24" selection-start-line="535" selection-start-column="24" selection-end-line="535" selection-end-column="24" />
           <folding />
         </state>
       </provider>
