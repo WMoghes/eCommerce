@@ -5,25 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ URL::to('website/assets/images/favicon.ico') }}">
     <title>@yield('title')</title>
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
-    {!! Html::style('assets/ar/css/bootstrap.min.css') !!}
+    {!! Html::style('website/assets/ar/css/bootstrap.min.css') !!}
 
             <!-- Owl Carousel CSS -->
-    {!! Html::style('assets/ar/css/owl.carousel.css') !!}
-    {!! Html::style('assets/ar/css/owl.theme.default.min.css') !!}
+    {!! Html::style('website/assets/ar/css/owl.carousel.css') !!}
+    {!! Html::style('website/assets/ar/css/owl.theme.default.min.css') !!}
 
             <!-- Icon CSS -->
-    {!! Html::style('assets/ar/css/font-awesome.min.css') !!}
+    {!! Html::style('website/assets/ar/css/font-awesome.min.css') !!}
 
             <!-- Custom styles for this template -->
-    {!! Html::style('assets/ar/css/style.css') !!}
-    {!! Html::style('assets/ar/css/ar_style.css') !!}
+    {!! Html::style('website/assets/ar/css/style.css') !!}
+    {!! Html::style('website/assets/ar/css/ar_style.css') !!}
 
     @yield('header')
 </head>
@@ -124,20 +124,20 @@
 <!-- End Footer -->
 
         <!-- js placed at the end of the document so the pages load faster -->
-{!! Html::script('assets/js/jquery-2.1.4.min.js') !!}
-{!! Html::script('assets/js/bootstrap.min.js') !!}
+{!! Html::script('website/assets/js/jquery-2.1.4.min.js') !!}
+{!! Html::script('website/assets/js/bootstrap.min.js') !!}
 
         <!-- Jquery easing -->
-{!! Html::script('assets/js/jquery.easing.1.3.min.js') !!}
+{!! Html::script('website/assets/js/jquery.easing.1.3.min.js') !!}
 
         <!-- Owl Carousel -->
-{!! Html::script('assets/js/owl.carousel.min.js') !!}
+{!! Html::script('website/assets/js/owl.carousel.min.js') !!}
 
         <!--sticky header-->
-{!! Html::script('assets/js/jquery.sticky.js') !!}
+{!! Html::script('website/assets/js/jquery.sticky.js') !!}
 
         <!--common script for all pages-->
-{!! Html::script('assets/js/jquery.app.js') !!}
+{!! Html::script('website/assets/js/jquery.app.js') !!}
 
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({
