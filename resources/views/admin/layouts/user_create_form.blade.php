@@ -1,22 +1,4 @@
-{{--{!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'url' => url('/register')]) !!}--}}
-@if(count($errors) > 0)
-    <div class="col-sm-12">
-        <div class="col-sm-2">
 
-        </div>
-        <div class="row col-sm-4" style="margin-top: 15px">
-
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-
-    </div>
-@endif
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
     <div class="col-sm-9 pull-right">
         {!! Form::text('name', old('name'), ['class' => 'form-control', 'id' => 'name', 'autocomplete' => 'off']) !!}
@@ -86,4 +68,4 @@
         </button>
     </div>
 </div>
-{{--{!! Form::close() !!}--}}
+

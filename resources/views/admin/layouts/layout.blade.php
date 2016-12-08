@@ -195,7 +195,7 @@
                                 <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> {{ trans('welcome.settings') }}</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> {{ trans('welcome.lock_screen') }}</a></li>
                                 <li class="divider"></li>
-                                <li><a href="javascript:void(0)"><i class="ti-power-off m-r-10 text-danger"></i> {{ trans('welcome.logout') }}</a></li>
+                                <li><a href="{{ route('logout') }}"><i class="ti-power-off m-r-10 text-danger"></i> {{ trans('welcome.logout') }}</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -23,10 +23,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['web', 'admin']], function(){
+Route::group(['middleware' => ['admin']], function(){
     Route::get('/adminpanel', [
         'uses'          => 'AdminController@index',
         'as'            => 'dashboard'
     ]);
     Route::resource('adminpanel/users', 'UsersController');
+    Route::get('logout', 'AdminController@logout')->name('logout');
 });

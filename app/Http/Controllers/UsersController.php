@@ -37,7 +37,16 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create($request->all());
+        var_dump($request->session()->all());
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+        $inputs = $request->all();
+
+        $inputs['password'] = bcrypt($request->password);
+        $user = User::create($inputs);
         return redirect()->route('adminpanel.users.index');
     }
 
