@@ -64,7 +64,7 @@
 <div class="form-group">
     <div class="col-sm-12">
         <button type="submit" class="btn btn-primary pull-right">
-            <i class="fa fa-btn fa-user"></i> {{ trans('welcome.register') }}
+            <i class="fa fa-btn fa-user"></i> {{ trans('welcome.update') }}
         </button>
     </div>
 </div>

@@ -16,7 +16,11 @@ class AdminController extends Controller
 
     public function logout()
     {
-        Auth::logout();
-        return redirect('/');
+        if(Auth::check())
+        {
+            //dd(Auth::user());
+            Auth::logout();
+            return redirect('/');
+        }
     }
 }

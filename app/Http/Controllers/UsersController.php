@@ -16,7 +16,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -37,7 +38,6 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request->session()->all());
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
@@ -69,7 +69,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -81,7 +82,15 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->password == ''){
+            $inputs = $request->except(['password']);
+        } else {
+            $inputs = $request->all();
+            $inputs['password'] = bcrypt($request->password);
+        }
+        $user = User::findOrFail($id);
+        $user->update($inputs);
+        return redirect()->route('adminpanel.users.index');
     }
 
     /**
@@ -92,6 +101,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id)->delete();
+        return redirect()->route('adminpanel.users.index')->with('info', 'Done');
     }
 }

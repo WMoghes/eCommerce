@@ -70,7 +70,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('welcome.logout') }}</a></li>
+                            <li><a href="{{ route('logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('welcome.logout') }}</a></li>
                         </ul>
                     </li>
                 @endif
