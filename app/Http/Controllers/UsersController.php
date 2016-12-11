@@ -92,7 +92,7 @@ class UsersController extends Controller
         }
         $user = User::findOrFail($id);
         $user->update($inputs);
-        return redirect()->route('adminpanel.users.index');
+        return redirect()->route('adminpanel.users.index')->with('status', trans('welcome.update_msg'));
     }
 
     /**
@@ -105,7 +105,7 @@ class UsersController extends Controller
     {
         if($id != 1){
             $user = User::findOrFail($id)->delete();
-            return redirect()->route('adminpanel.users.index')->with('info', 'Done');
+            return redirect()->route('adminpanel.users.index')->with('status', trans('welcome.remove_msg'));
         }
     }
 

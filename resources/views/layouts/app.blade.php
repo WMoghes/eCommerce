@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="{{ URL::to('website/assets/images/favicon.ico') }}">
-    <title>@yield('title')</title>
+    <title>{{ getSiteSettings() }}</title>
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -113,9 +113,9 @@
             </div>
             <div class="col-lg-2 col-md-2 text-center">
                 <ul class="social-icons">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="{{ getSiteSettings('facebook') }}"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="{{ getSiteSettings('twitter') }}"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="{{ getSiteSettings('youtube') }}"><i class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
         </div> <!-- end row -->

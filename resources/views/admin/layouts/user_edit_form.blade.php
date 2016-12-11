@@ -63,6 +63,10 @@
 
 <div class="form-group">
     <div class="col-sm-12">
+        <a href="{{ url('/adminpanel/users/' . $user->id . '/delete') }}" class="btn btn-danger pull-right" style="margin-right: 5px">
+            <i class="fa fa-trash-o"></i> {{ trans('welcome.delete') }}
+        </a>
+
         <button type="submit" class="btn btn-primary pull-right">
             <i class="fa fa-btn fa-user"></i> {{ trans('welcome.update') }}
         </button>
