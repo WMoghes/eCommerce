@@ -27,26 +27,30 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> {{ trans('welcome.users') }} </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('adminpanel.users.index') }}">{{ trans('welcome.users_show') }}</a></li>
-                        <li><a href="{{ route('adminpanel.users.create') }}">{{ trans('welcome.users_create') }}</a></li>
+                        <li>
+                            <a href="{{ route('adminpanel.users.index') }}">{{ trans('welcome.users_show') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('adminpanel.users.create') }}">{{ trans('welcome.users_create') }}</a>
+                        </li>
                     </ul>
                 </li>
 
+                <li class="text-muted menu-title">{{ trans('welcome.buildings_control') }}</li>
+
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> Forms </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="ti-view-grid"></i>
+                        <span> {{ trans('welcome.buildings') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
                     <ul class="list-unstyled">
-                        <li><a href="form-elements.html">General Elements</a></li>
-                        <li><a href="form-advanced.html">Advanced Form</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-mask.html">Form Masks</a></li>
-                        <li><a href="form-summernote.html">Summernote</a></li>
-                        <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
-                        <li><a href="form-code-editor.html">Code Editor</a></li>
-                        <li><a href="form-uploads.html">Multiple File Upload</a></li>
-                        <li><a href="form-xeditable.html">X-editable</a></li>
-                        <li><a href="form-image-crop.html">Image Crop</a></li>
+                        <li>
+                            <a href="{{ route('adminpanel.buildings.index') }}">{{ trans('welcome.buildings_show') }}</a>
+                        </li>
+                        <li>
+                            <a href="#">{{ trans('welcome.building_create') }}</a>
+                        </li>
                     </ul>
                 </li>
             </ul>

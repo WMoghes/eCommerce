@@ -60,5 +60,16 @@ return [
     'site_settings'                 => 'إعدادات الموقع',
     'set_site_settings'             => 'ضبط إعدادات الموقع',
     'set_other_settings'            => 'ضبط إعدادات أخري',
+    'buildings_control'             => 'التحكم فى العقارات',
+    'buildings'                     => 'عقارات',
+    'buildings_show'                => 'عرض العقارات',
+    'building_create'               => 'إنشاء عقار',
+    'building_name'                 => 'أسم العقار',
+    'building_price'                => 'سعر العقار',
+    'building_type'                 => 'نوع العقار',
+    'building_square'               => 'ميدان العقار',
+    'building_status'               => 'حالة العقار',
+    'active'                        => 'مفعل',
+    'inactive'                      => 'غير مفعل',
 
 ];
