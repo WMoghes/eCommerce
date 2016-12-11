@@ -16,7 +16,6 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('adminpanel.users.index') }}">{{ trans('welcome.users_show') }}</a></li>
                         <li><a href="{{ route('adminpanel.users.create') }}">{{ trans('welcome.users_create') }}</a></li>
-                        <li><a href="#">{{ trans('welcome.users_edit') }}</a></li>
                     </ul>
                 </li>
 

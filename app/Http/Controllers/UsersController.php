@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Yajra\Datatables\Facades\Datatables;
 
 class UsersController extends Controller
 {
@@ -101,7 +103,33 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id)->delete();
-        return redirect()->route('adminpanel.users.index')->with('info', 'Done');
+        if($id != 1){
+            $user = User::findOrFail($id)->delete();
+            return redirect()->route('adminpanel.users.index')->with('info', 'Done');
+        }
+    }
+
+    public function anyData()
+    {
+        Carbon::setLocale('ar');
+        $users = User::select(['id', 'name', 'email', 'admin', 'created_at', 'updated_at']);
+        return Datatables::of($users)
+            ->editColumn('admin', function($model){
+                return ($model->admin == 1) ? trans('welcome.admin') : trans('welcome.user');
+            })
+            ->editColumn('control', function($model){
+                $all = '<a href="' . url("/adminpanel/users/" . $model->id . "/edit") . '" style="padding: 10px">';
+                $all .= '<i class="fa fa-pencil"></i></a>';
+                if($model->id != 1){
+                    $all .= '<a href="' . url("/adminpanel/users/" . $model->id . "/delete") . '"><i class="fa fa-trash-o"></i></a>';
+                }
+                return $all;
+            })
+            ->editColumn('name', function($model) {
+                return '<a href="' . url("/adminpanel/users/" . $model->id . "/edit") . '">' . $model->name . '</a>';
+            })
+            ->editColumn('created_at', function($model) { return $model->created_at->diffForHumans(); })
+            ->editColumn('updated_at', function($model) { return $model->updated_at->diffForHumans(); })
+            ->make(true);
     }
 }
