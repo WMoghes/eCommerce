@@ -28,7 +28,6 @@
 @endsection
 
 @section('content')
-    @include('admin.layouts.flash_message')
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
@@ -161,4 +160,5 @@
 
         });
     </script>
+    @include('admin.layouts.flash_message')
 @endsection

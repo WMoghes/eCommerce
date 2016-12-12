@@ -20,7 +20,6 @@
 @endsection
 
 @section('content')
-    @include('admin.layouts.flash_message')
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
@@ -31,4 +30,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    @include('admin.layouts.flash_message')
 @endsection

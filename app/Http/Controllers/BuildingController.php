@@ -44,7 +44,7 @@ class BuildingController extends Controller
     {
         $inputs = $request->all();
         $inputs['user_id'] = Auth::user()->id;
-//        dd($inputs);
+        dd($inputs);
         $building = Building::create($inputs);
         return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_add_msg'));
     }
@@ -84,7 +84,7 @@ class BuildingController extends Controller
 //        dd($request->all());
         $building = Building::findOrFail($id)->update($request->all());
         return redirect()->route('adminpanel.buildings.index')
-                    ->with('status', trans('welcome.building_edit_msg') . "' " . $request->bu_name . " '");
+                    ->with('status_for_update_building', trans('welcome.building_edit_msg') . '( ' . $request->bu_name . ' )');
     }
 
     /**

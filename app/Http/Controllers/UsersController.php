@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Building;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class UsersController extends Controller
 
         $inputs['password'] = bcrypt($request->password);
         $user = User::create($inputs);
-        return redirect()->route('adminpanel.users.index');
+        return redirect()->route('adminpanel.users.index')->with('status', trans('welcome.created_msg'));
     }
 
     /**
@@ -105,6 +106,8 @@ class UsersController extends Controller
     {
         if($id != 1){
             $user = User::findOrFail($id)->delete();
+            // I will delete all buildings for this user
+            Building::where('user_id', $id)->delete();
             return redirect()->route('adminpanel.users.index')->with('status', trans('welcome.remove_msg'));
         }
     }
@@ -121,7 +124,7 @@ class UsersController extends Controller
                 $all = '<a href="' . url("/adminpanel/users/" . $model->id . "/edit") . '" style="padding: 10px">';
                 $all .= '<i class="fa fa-pencil"></i></a>';
                 if($model->id != 1){
-                    $all .= '<a href="' . url("/adminpanel/users/" . $model->id . "/delete") . '"><i class="fa fa-trash-o"></i></a>';
+                    $all .= '<a id="delete-user" href="' . url("/adminpanel/users/" . $model->id . "/delete") . '"><i class="fa fa-trash-o"></i></a>';
                 }
                 return $all;
             })

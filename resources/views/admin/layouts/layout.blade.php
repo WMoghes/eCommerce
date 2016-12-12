@@ -14,6 +14,7 @@
     {!! Html::style('admin/assets/css/icons.css') !!}
     {!! Html::style('admin/assets/css/pages.css') !!}
     {!! Html::style('admin/assets/css/responsive.css') !!}
+    {!! Html::style('admin/assets/plugins/sweet-alert/sweetalert.css') !!}
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -383,6 +384,8 @@
 {!! Html::script('admin/assets/js/jquery.scrollTo.min.js') !!}
 {!! Html::script('admin/assets/js/jquery.core.js') !!}
 {!! Html::script('admin/assets/js/jquery.app.js') !!}
+{!! Html::script('admin/assets/plugins/sweet-alert/sweetalert.min.js') !!}
+{{--{!! Html::script('admin/assets/plugins/sweet-alert/jquery.sweet-alert.init.js') !!}--}}
 @yield('script')
 </body>
 </html>
