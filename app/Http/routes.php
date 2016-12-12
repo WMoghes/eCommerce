@@ -35,6 +35,7 @@ Route::group(['middleware' => ['admin']], function(){
         'as'            => 'dashboard'
     ]);
     Route::resource('/adminpanel/buildings', 'BuildingController');
+    Route::get('adminpanel/buildings/{id}/delete', 'BuildingController@destroy');
     // Site Settings
     Route::get('/adminpanel/site-settings', [
         'uses'          => 'SiteSettingController@index',

@@ -13,7 +13,7 @@ class BuildingRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class BuildingRequest extends Request
     public function rules()
     {
         return [
-            //
+            'bu_name'           => 'required',
+            'bu_price'          => 'required',
+            'bu_rent'           => 'required',
+            'bu_square'         => 'required',
+            'bu_small_desc'     => 'required',
+            'bu_meta'           => 'required',
+            'bu_longitude'      => 'required',
+            'bu_latitude'       => 'required',
         ];
     }
 }

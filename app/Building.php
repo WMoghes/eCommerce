@@ -9,6 +9,6 @@ class Building extends Model
     protected $table = 'buildings';
     protected $fillable = [
         'bu_name' , 'bu_price' ,'bu_rent', 'bu_square', 'bu_type', 'bu_small_desc', 'bu_meta',
-        'bu_longitude', 'bu_latitude', 'bu_status', 'user_id'
+        'bu_longitude', 'bu_latitude', 'bu_status', 'user_id', 'bu_room'
     ];
 }

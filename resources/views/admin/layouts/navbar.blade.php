@@ -49,7 +49,7 @@
                             <a href="{{ route('adminpanel.buildings.index') }}">{{ trans('welcome.buildings_show') }}</a>
                         </li>
                         <li>
-                            <a href="#">{{ trans('welcome.building_create') }}</a>
+                            <a href="{{ route('adminpanel.buildings.create') }}">{{ trans('welcome.building_create') }}</a>
                         </li>
                     </ul>
                 </li>

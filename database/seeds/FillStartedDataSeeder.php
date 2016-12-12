@@ -11,6 +11,7 @@ class FillStartedDataSeeder extends Seeder
      */
     public function run()
     {
+        // Insert site settings into the table
         DB::table('site_settings')->insert([
             [
                 'slug'          => 'أسم الموقع',
@@ -71,6 +72,53 @@ class FillStartedDataSeeder extends Seeder
                 'namesetting'   => 'linked_in',
                 'value'         => 'wmoghes',
                 'type'          => '0'
+            ]
+        ]);
+
+        // Add default admin into database
+        DB::table('users')->insert([
+            [
+                'name'          => 'وليد مصطفي',
+                'email'         => 'wmoghes@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 1,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'مي عبد المنعم كريم',
+                'email'         => 'admin.1@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 1,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'نبيل كرم محمد',
+                'email'         => 'nabil@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 0,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'منار حسين على',
+                'email'         => 'manar@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 1,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'شيماء الريس أحمد',
+                'email'         => 'shaima@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 0,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'أحمد محي السيد أحمد',
+                'email'         => 'mohey@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 0,
+                'created_at'    => date('Y-m-d H:i:s')
+            ],[
+                'name'          => 'مايكل نبيل حنا',
+                'email'         => 'mikel@gmail.com',
+                'password'      => bcrypt('321321'),
+                'admin'         => 0,
+                'created_at'    => date('Y-m-d H:i:s')
             ]
         ]);
     }

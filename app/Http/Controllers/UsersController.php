@@ -128,8 +128,8 @@ class UsersController extends Controller
             ->editColumn('name', function($model) {
                 return '<a href="' . url("/adminpanel/users/" . $model->id . "/edit") . '">' . $model->name . '</a>';
             })
-            ->editColumn('created_at', function($model) { return $model->created_at->diffForHumans(); })
-            ->editColumn('updated_at', function($model) { return $model->updated_at->diffForHumans(); })
+            ->editColumn('created_at', function($model) { return ($model->created_at != null) ? $model->created_at->diffForHumans() : ''; })
+            ->editColumn('updated_at', function($model) { return ($model->updated_at != null) ? $model->updated_at->diffForHumans() : trans('welcome.not_updated_yet'); })
             ->make(true);
     }
 }

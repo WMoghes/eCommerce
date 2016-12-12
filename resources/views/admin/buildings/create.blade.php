@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-    {{ trans('welcome.users_create') }}
+    {{ trans('welcome.building_create') }}
 @endsection
 
 @section('header')
@@ -10,7 +10,7 @@
 @endsection
 
 @section('page_title')
-    {{ trans('welcome.users_create') }}
+    {{ trans('welcome.building_create') }}
 @endsection
 
 @section('content_header')
@@ -19,10 +19,10 @@
             <a href="{{ route('dashboard') }}">{{ trans('welcome.dashboard') }}</a>
         </li>
         <li>
-            <a href="{{ route('adminpanel.users.index') }}">{{ trans('welcome.users') }}</a>
+            <a href="{{ route('adminpanel.buildings.index') }}">{{ trans('welcome.buildings') }}</a>
         </li>
         <li class="active">
-            {{ trans('welcome.users_create') }}
+            {{ trans('welcome.building_create') }}
         </li>
     </ol>
 @endsection
@@ -31,12 +31,12 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('welcome.register') }}</div>
+                <div class="panel-heading">{{ trans('welcome.building_create') }}</div>
                 <div class="panel-body">
 
                     {!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST',
-                                    'url' => route('adminpanel.users.store')]) !!}
-                        @include('admin.layouts.user_create_form')
+                                    'url' => route('adminpanel.buildings.store')]) !!}
+                        @include('admin.layouts.building_create_form')
                     {!! Form::close() !!}
 
                 </div>

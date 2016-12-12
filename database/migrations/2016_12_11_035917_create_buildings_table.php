@@ -18,6 +18,7 @@ class CreateBuildingsTable extends Migration
             $table->string('bu_price', 25);
             $table->tinyInteger('bu_rent');
             $table->string('bu_square', 100);
+            $table->tinyInteger('bu_room');
             $table->tinyInteger('bu_type');
             $table->string('bu_small_desc');
             $table->string('bu_meta');

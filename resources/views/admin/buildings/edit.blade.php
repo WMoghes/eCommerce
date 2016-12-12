@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-    {{ trans('welcome.users_edit') }}
+    {{ trans('welcome.building_edit') }}
 @endsection
 
 @section('header')
@@ -10,7 +10,7 @@
 @endsection
 
 @section('page_title')
-    {{ trans('welcome.users_edit') }}
+    {{ trans('welcome.building_edit') }}
 @endsection
 
 @section('content_header')
@@ -19,10 +19,10 @@
             <a href="{{ route('dashboard') }}">{{ trans('welcome.dashboard') }}</a>
         </li>
         <li>
-            <a href="{{ route('adminpanel.users.index') }}">{{ trans('welcome.users') }}</a>
+            <a href="{{ route('adminpanel.buildings.index') }}">{{ trans('welcome.buildings') }}</a>
         </li>
         <li class="active">
-            {{ trans('welcome.users_edit') }}
+            {{ trans('welcome.building_edit') }}
         </li>
     </ol>
 @endsection
@@ -31,12 +31,12 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('welcome.register') }}</div>
+                <div class="panel-heading">{{ trans('welcome.building_edit') }}</div>
                 <div class="panel-body">
 
-                    {!! Form::model($user, ['class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT',
-                                    'url' => route('adminpanel.users.update', $user->id)]) !!}
-                        @include('admin.layouts.user_edit_form')
+                    {!! Form::model($building, ['class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT',
+                                    'url' => route('adminpanel.buildings.update', $building->id)]) !!}
+                        @include('admin.layouts.building_edit_form')
                     {!! Form::close() !!}
 
                 </div>

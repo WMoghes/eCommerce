@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Building;
+use App\Http\Requests\BuildingRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class BuildingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.buildings.create');
     }
 
     /**
@@ -38,9 +39,10 @@ class BuildingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BuildingRequest $request)
     {
-        //
+        $building = Building::create($request->all());
+        return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_add_msg'));
     }
 
     /**
@@ -62,7 +64,8 @@ class BuildingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $building = Building::findOrFail($id);
+        return view('admin.buildings.edit', compact('building'));
     }
 
     /**
@@ -74,7 +77,10 @@ class BuildingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+        $building = Building::findOrFail($id)->update($request->all());
+        return redirect()->route('adminpanel.buildings.index')
+                    ->with('status', trans('welcome.building_edit_msg') . "' " . $request->bu_name . " '");
     }
 
     /**
@@ -85,7 +91,8 @@ class BuildingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Building::findOrFail($id)->delete();
+        return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_remove_msg') );
     }
 
     public function anyData()
@@ -106,7 +113,8 @@ class BuildingController extends Controller
                 return '<a href="' . url("/adminpanel/buildings/" . $model->id . "/edit") . '">' . $model->bu_name . '</a>';
             })
             ->editColumn('created_at', function($model) { return $model->created_at->diffForHumans(); })
-            ->editColumn('bu_type', function($model) { return getBuildingType($model->bu_type); })
+            ->editColumn('bu_type', function($model) { return setBuildingType($model->bu_type); })
+            ->editColumn('bu_status', function($model) { return setStatus($model->bu_status); })
             ->make(true);
     }
 }

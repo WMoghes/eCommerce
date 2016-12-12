@@ -109,9 +109,16 @@ return [
     */
 
     'attributes' => [
-        'name'      => 'الإسم',
-        'email'     => 'البريد الإلكتروني',
-        'password'  => 'الرقم السري'
+        'name'                          => 'الإسم',
+        'email'                         => 'البريد الإلكتروني',
+        'password'                      => 'الرقم السري',
+        'bu_name'                       => trans('welcome.building_name'),
+        'bu_price'                      => trans('welcome.building_price'),
+        'bu_small_desc'                 => trans('welcome.building_small_desc'),
+        'bu_square'                     => trans('welcome.building_square'),
+        'bu_meta'                       => trans('welcome.building_meta'),
+        'bu_longitude'                  => trans('welcome.longitude'),
+        'bu_latitude'                   => trans('welcome.latitude'),
     ],
 
 ];
