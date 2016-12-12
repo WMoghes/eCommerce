@@ -50,3 +50,4 @@ Route::group(['middleware' => ['admin']], function(){
     Route::get('adminpanel/users/{id}/delete', 'UsersController@destroy');
 });
 Route::get('logout', 'AdminController@logout')->name('logout');
+Route::get('/buildings', 'BuildingController@getActiveBuildings');

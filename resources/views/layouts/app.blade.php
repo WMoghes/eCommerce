@@ -10,17 +10,12 @@
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-
     <!-- Bootstrap core CSS -->
     {!! Html::style('website/assets/ar/css/bootstrap.min.css') !!}
-
             <!-- Owl Carousel CSS -->
     {!! Html::style('website/assets/ar/css/owl.carousel.css') !!}
     {!! Html::style('website/assets/ar/css/owl.theme.default.min.css') !!}
-
             <!-- Icon CSS -->
-    {!! Html::style('website/assets/ar/css/font-awesome.min.css') !!}
-
             <!-- Custom styles for this template -->
     {!! Html::style('website/assets/ar/css/style.css') !!}
     {!! Html::style('website/assets/ar/css/ar_style.css') !!}
@@ -59,6 +54,11 @@
             <!-- Navbar right -->
             <ul class="nav navbar-nav navbar-left">
 
+                <li class="active">
+                    <a href="{{ url('/') }}" class="nav-link">{{ trans('welcome.home') }}</a>
+                </li>
+                <li><a href="{{ url('/buildings') }}">{{ trans('welcome.all_buildings') }}</a></li>
+
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">{{ trans('welcome.login') }}</a></li>
@@ -74,9 +74,7 @@
                         </ul>
                     </li>
                 @endif
-                <li class="active">
-                    <a href="{{ url('/') }}" class="nav-link">{{ trans('welcome.home') }}</a>
-                </li>
+
             </ul>
 
         </div>

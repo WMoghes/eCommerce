@@ -44,7 +44,6 @@ class BuildingController extends Controller
     {
         $inputs = $request->all();
         $inputs['user_id'] = Auth::user()->id;
-        dd($inputs);
         $building = Building::create($inputs);
         return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_add_msg'));
     }
@@ -120,5 +119,11 @@ class BuildingController extends Controller
             ->editColumn('bu_type', function($model) { return setBuildingType($model->bu_type); })
             ->editColumn('bu_status', function($model) { return setStatus($model->bu_status); })
             ->make(true);
+    }
+
+    public function getActiveBuildings()
+    {
+        $building = Building::where('bu_status' , 1)->get()->toArray();
+        return view('website.buildings.index', compact('building'));
     }
 }

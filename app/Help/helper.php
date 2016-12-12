@@ -17,10 +17,10 @@ function getBuildingRentType(){
     return $array;
 }
 function getStatus() {
-    $array = [trans('welcome.active'), trans('welcome.inactive')];
+    $array = [trans('welcome.inactive'), trans('welcome.active')];
     return $array;
 }
 function setStatus($num) {
-    $array = [trans('welcome.active'), trans('welcome.inactive')];
+    $array = [trans('welcome.inactive'), trans('welcome.active')];
     return $array[$num];
 }
