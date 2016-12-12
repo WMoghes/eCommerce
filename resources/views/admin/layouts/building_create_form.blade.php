@@ -133,6 +133,19 @@
     <label for="bu_status" class="col-sm-3 control-label"  style="text-align: right">{{ trans('welcome.status_select') }}</label>
 </div>
 
+<div class="form-group{{ $errors->has('bu_long_desc') ? ' has-error' : '' }}">
+    <div class="col-sm-9 pull-right">
+        {!! Form::textarea('bu_long_desc', old('bu_long_desc'), ['class' => 'form-control', 'autocomplete' => 'off', 'rows' => 3]) !!}
+
+        @if ($errors->has('bu_long_desc'))
+            <span class="help-block">
+                <strong>{{ $errors->first('bu_long_desc') }}</strong>
+            </span>
+        @endif
+    </div>
+    <label for="bu_long_desc" class="col-sm-3 control-label" style="text-align: right">{{ trans('welcome.building_long_desc') }}</label>
+</div>
+
 <div class="form-group">
     <div class="col-sm-12">
         <button type="submit" class="btn btn-primary pull-right">

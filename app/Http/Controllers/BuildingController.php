@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Facades\Datatables;
 
 class BuildingController extends Controller
@@ -41,7 +42,10 @@ class BuildingController extends Controller
      */
     public function store(BuildingRequest $request)
     {
-        $building = Building::create($request->all());
+        $inputs = $request->all();
+        $inputs['user_id'] = Auth::user()->id;
+//        dd($inputs);
+        $building = Building::create($inputs);
         return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_add_msg'));
     }
 

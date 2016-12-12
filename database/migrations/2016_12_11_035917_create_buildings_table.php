@@ -21,10 +21,12 @@ class CreateBuildingsTable extends Migration
             $table->tinyInteger('bu_room');
             $table->tinyInteger('bu_type');
             $table->string('bu_small_desc');
+            $table->text('bu_long_desc');
             $table->string('bu_meta');
             $table->tinyInteger('bu_status');
             $table->string('bu_longitude', 30);
             $table->string('bu_latitude', 30);
+            $table->tinyInteger('user_id');
             $table->timestamps();
         });
     }

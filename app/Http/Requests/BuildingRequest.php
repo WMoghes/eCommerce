@@ -24,12 +24,12 @@ class BuildingRequest extends Request
     public function rules()
     {
         return [
-            'bu_name'           => 'required',
-            'bu_price'          => 'required',
-            'bu_rent'           => 'required',
+            'bu_name'           => 'required|min:5|max:100',
+            'bu_price'          => 'required|integer',
+            'bu_rent'           => 'required|integer',
             'bu_square'         => 'required',
-            'bu_small_desc'     => 'required',
-            'bu_meta'           => 'required',
+            'bu_small_desc'     => 'required|min:5',
+            'bu_meta'           => 'required|min:5',
             'bu_longitude'      => 'required',
             'bu_latitude'       => 'required',
         ];
