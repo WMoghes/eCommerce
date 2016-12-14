@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Facades\Datatables;
 
 class BuildingController extends Controller
@@ -120,10 +121,51 @@ class BuildingController extends Controller
             ->editColumn('bu_status', function($model) { return setStatus($model->bu_status); })
             ->make(true);
     }
-
+    private function getInfo(){
+        $activeStatuscount = $building = Building::where('bu_status' , 1)->get()->toArray();
+        $apartmentsCount = Building::where('bu_type', 0)->get()->toArray();
+        $villaCount = Building::where('bu_type', 1)->get()->toArray();
+        $chaletCount = Building::where('bu_type', 2)->get()->toArray();
+        $rentCount = Building::where('bu_rent', 0)->get()->toArray();
+        $ownershipCount = Building::where('bu_rent', 1)->get()->toArray();
+        $lowestPrice = DB::table('buildings')->orderBy('bu_price', 'asc')->first();
+        $highestPrice = DB::table('buildings')->orderBy('bu_price', 'desc')->first();
+        $arr = [
+            'apartmentsCount'       => count($apartmentsCount),
+            'villaCount'            => count($villaCount),
+            'activeStatuscount'     => count($activeStatuscount),
+            'chaletCount'           => count($chaletCount),
+            'rentCount'             => count($rentCount),
+            'ownershipCount'        => count($ownershipCount),
+            'lowestPrice'           => $lowestPrice,
+            'highestPrice'          => $highestPrice
+        ];
+        return $arr;
+    }
     public function getActiveBuildings()
     {
-        $building = Building::where('bu_status' , 1)->get()->toArray();
-        return view('website.buildings.index', compact('building'));
+        $building = Building::where('bu_status' , 1)->paginate(6);
+//        $building = Building::where('bu_status' , 1)->get()->toArray();
+        return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
+    }
+    public function getBuildingType($id)
+    {
+        if(in_array($id, [0,1,2])){
+            $building = Building::where('bu_type', 0)->paginate(6);
+            $info = $this->getInfo();
+            return view('website.buildings.index', compact('building', 'info'));
+        }else {
+            return redirect()->back();
+        }
+    }
+    public function getTypeRent($id)
+    {
+        if(in_array($id, [0,1])){
+            $building = Building::where('bu_rent', $id)->paginate(6);
+            $info = $this->getInfo();
+            return view('website.buildings.index', compact('building', 'info'));
+        }else{
+            return redirect()->back();
+        }
     }
 }

@@ -9,6 +9,10 @@
                     <a href="{{ route('dashboard') }}" class="waves-effect"><i class="ti-home"></i>
                         <span> {{ trans('welcome.dashboard') }} </span> </a>
                 </li>
+                <li class="has_sub">
+                    <a href="{{ route('frontend.buildings') }}" class="waves-effect"><i class="ti-home"></i>
+                        <span> {{ trans('welcome.frontend_buildings') }} </span> </a>
+                </li>
 
                 <li class="text-muted menu-title">{{ trans('welcome.settings') }}</li>
 
@@ -18,7 +22,7 @@
                     </a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('site.settings') }}">{{ trans('welcome.set_site_settings') }}</a></li>
-                        <li><a href="form-advanced.html">{{ trans('welcome.set_other_settings') }}</a></li>
+                        <li><a href="#">{{ trans('welcome.set_other_settings') }}</a></li>
                     </ul>
                 </li>
 

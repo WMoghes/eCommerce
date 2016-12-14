@@ -50,4 +50,8 @@ Route::group(['middleware' => ['admin']], function(){
     Route::get('adminpanel/users/{id}/delete', 'UsersController@destroy');
 });
 Route::get('logout', 'AdminController@logout')->name('logout');
-Route::get('/buildings', 'BuildingController@getActiveBuildings');
+
+// frontend Building page
+Route::get('buildings', 'BuildingController@getActiveBuildings')->name('frontend.buildings');
+Route::get('buildings/type-building/{id}', 'BuildingController@getBuildingType')->name('frontend.building-type.buildings');
+Route::get('buildings/type-rent/{id}', 'BuildingController@getTypeRent')->name('frontend.type-rent.buildings');

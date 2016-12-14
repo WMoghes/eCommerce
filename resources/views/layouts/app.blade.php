@@ -18,9 +18,9 @@
             <!-- Icon CSS -->
             <!-- Custom styles for this template -->
     {!! Html::style('website/assets/ar/css/style.css') !!}
+    @yield('header')
     {!! Html::style('website/assets/ar/css/ar_style.css') !!}
 
-    @yield('header')
 </head>
 <body data-spy="scroll" data-target="#navbar-menu" style="direction: rtl">
 
@@ -151,6 +151,7 @@
         }
     })
 </script>
+@yield('script')
 @yield('footer')
 </body>
 </html>

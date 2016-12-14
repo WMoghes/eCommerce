@@ -24,3 +24,10 @@ function setStatus($num) {
     $array = [trans('welcome.inactive'), trans('welcome.active')];
     return $array[$num];
 }
+function getRoomsNumber(){
+    $array = [];
+    for($i = 2; $i <= 60; $i++){
+        $array[] = $i;
+    }
+    return $array;
+}
