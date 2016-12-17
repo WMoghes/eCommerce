@@ -89,6 +89,7 @@ return [
     'building_long_desc'            => 'وصف مطول للعقار',
     'building_meta'                 => 'كلمات دالالية عن العقار',
     'building_rent_select'          => 'أختر نوع الإيجار',
+    'building_rent'                 => ' نوع الإيجار',
     'building_type_select'          => 'أختر نوع العقار',
     'building_select_rooms'         => 'حدد عدد الغرف',
     'tip_about_small_desc'          => 'يجب ألا يزيد الوصف عن 160 حرف طبقا لمعاير جوجل',

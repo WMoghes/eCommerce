@@ -25,7 +25,8 @@
                 <div class="col-md-9" style="background-color: #95A8B7">
                     @include('website.includes.buildings_show')
                     <div class="text-center">
-                        {{ $building->links() }}
+{{--                        {{ $building->links() }}--}}
+{{--                        {{ $building->appends(Request::except('page'))->links() }}--}}
                     </div>
                 </div>
 

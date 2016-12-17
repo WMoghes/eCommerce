@@ -39,15 +39,15 @@
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-color:#337ab7;
 }
-.btn{
-    background-color: #337ab7;
-    color: white;
-}
-.btn:hover{
-    background-color: #337ab7;
-    color: white;
-}
-.btn:focus{
-    background-color: #337ab7;
-    color: white;
-}
+/*.btn{*/
+    /*background-color: #337ab7;*/
+    /*color: white;*/
+/*}*/
+/*.btn:hover{*/
+    /*background-color: #337ab7;*/
+    /*color: white;*/
+/*}*/
+/*.btn:focus{*/
+    /*background-color: #337ab7;*/
+    /*color: white;*/
+/*}*/

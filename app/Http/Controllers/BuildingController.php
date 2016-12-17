@@ -168,4 +168,18 @@ class BuildingController extends Controller
             return redirect()->back();
         }
     }
+    public function search(Request $request)
+    {
+        // to split the string
+        $x = explode(';', $request->range);
+        $building = Building::where([
+                                    ['bu_name', 'like', '%' . $request->bu_name . '%'],
+                                    ['bu_type', $request->bu_type] ,
+                                    ['bu_rent', $request->bu_rent] ,
+                                    ['bu_room', $request->bu_room]
+                                ])->whereBetween('bu_price', $x)->get();
+//        $building = $sql;
+//        $building->paginate(3);
+        return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
+    }
 }
