@@ -172,14 +172,31 @@ class BuildingController extends Controller
     {
         // to split the string
         $x = explode(';', $request->range);
-        $building = Building::where([
-                                    ['bu_name', 'like', '%' . $request->bu_name . '%'],
-                                    ['bu_type', $request->bu_type] ,
-                                    ['bu_rent', $request->bu_rent] ,
-                                    ['bu_room', $request->bu_room]
-                                ])->whereBetween('bu_price', $x)->get();
-//        $building = $sql;
-//        $building->paginate(3);
+        $req = array_except($request->toArray(), ['_token', 'submit']);
+        $query = DB::table('buildings')->select('*');
+        foreach ($req as $key => $value) {
+            if($value != null){
+                if($key == 'bu_name'){
+                    $arr[$key] = $value;
+                    $query->where($key, 'like' , '%' . $value . '%');
+                }elseif ($key == 'range'){
+                    $arr[$key] = $value;
+                    $query->whereBetween('bu_price', $x);
+                }else{
+                    $arr[$key] = $value;
+                    $query->where($key, $value);
+                }
+            }
+        }
+
+        $building = $query->paginate(3);
+//        $building->setPath('search');
+//        $building = Building::where([
+//                                    ['bu_name', 'like', '%' . $request->bu_name . '%'],
+//                                    ['bu_type', $request->bu_type] ,
+//                                    ['bu_rent', $request->bu_rent] ,
+//                                    ['bu_room', $request->bu_room]
+//                                ])->whereBetween('bu_price', $x)->get();
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
 }

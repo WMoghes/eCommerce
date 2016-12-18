@@ -55,4 +55,4 @@ Route::get('logout', 'AdminController@logout')->name('logout');
 Route::get('buildings', 'BuildingController@getActiveBuildings')->name('frontend.buildings');
 Route::get('buildings/type-building/{id}', 'BuildingController@getBuildingType')->name('frontend.building-type.buildings');
 Route::get('buildings/type-rent/{id}', 'BuildingController@getTypeRent')->name('frontend.type-rent.buildings');
-Route::post('buildings/search', 'BuildingController@search')->name('frontend.buildings.search');
+Route::get('buildings/search', 'BuildingController@search')->name('frontend.buildings.search');
