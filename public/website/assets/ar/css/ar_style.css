@@ -43,6 +43,9 @@
     top: 28px;
     width: 220px;
 }
+.silderBar {
+    width: 420px;
+}
 .product-list-box .price-tag {
     width: 90px;
     margin-right: 0px;

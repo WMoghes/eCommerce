@@ -59,7 +59,11 @@ class BuildingController extends Controller
      */
     public function show($id)
     {
-        //
+        Carbon::setLocale('ar');
+        $building = Building::findOrFail($id);
+        $similarBuilding_rent = Building::where('bu_rent', $building->bu_rent)->take(4)->orderBy(DB::raw('RAND()'))->get();
+        $similarBuilding_type = Building::where('bu_type', $building->bu_type)->take(4)->orderBy(DB::raw('RAND()'))->get();
+        return view('website.buildings.show', compact('building', 'similarBuilding_rent', 'similarBuilding_type'));
     }
 
     /**
@@ -149,14 +153,14 @@ class BuildingController extends Controller
     }
     public function getActiveBuildings()
     {
-        $building = Building::where('bu_status' , 1)->orderBy('id', 'desc')->paginate(6);
+        $building = Building::where('bu_status' , 1)->orderBy('id', 'desc')->paginate(9);
 //        $building = Building::where('bu_status' , 1)->get()->toArray();
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
     public function getBuildingType($id)
     {
         if(in_array($id, [0,1,2])){
-            $building = Building::where('bu_type', 0)->paginate(6);
+            $building = Building::where('bu_type', 0)->paginate(9);
             $info = $this->getInfo();
             return view('website.buildings.index', compact('building', 'info'));
         }else {
@@ -166,7 +170,7 @@ class BuildingController extends Controller
     public function getTypeRent($id)
     {
         if(in_array($id, [0,1])){
-            $building = Building::where('bu_rent', $id)->paginate(6);
+            $building = Building::where('bu_rent', $id)->paginate(9);
             $info = $this->getInfo();
             return view('website.buildings.index', compact('building', 'info'));
         }else{
@@ -193,7 +197,18 @@ class BuildingController extends Controller
             }
         }
         session(array_except($request->toArray(), ['_token', 'submit']));
-        $building = $query->paginate(3)->setPath('')->appends($arr);
+        $building = $query->paginate(9)->setPath('')->appends($arr);
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
+    }
+
+    public function welcomeInfo()
+    {
+        $lowestPrice = DB::table('buildings')->orderBy('bu_price', 'asc')->first();
+        $highestPrice = DB::table('buildings')->orderBy('bu_price', 'desc')->first();
+        $arr = [
+            'lowestPrice'           => $lowestPrice,
+            'highestPrice'          => $highestPrice
+        ];
+        return view('welcome')->withInfo($arr);
     }
 }

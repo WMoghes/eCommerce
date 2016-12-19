@@ -72,6 +72,12 @@ class FillStartedDataSeeder extends Seeder
                 'namesetting'   => 'linked_in',
                 'value'         => 'wmoghes',
                 'type'          => '0'
+            ],
+            [
+                'slug'          => 'الصورة الإفتراضية',
+                'namesetting'   => 'default_image',
+                'value'         => 'http://placehold.it/350x150',
+                'type'          => '0'
             ]
         ]);
 

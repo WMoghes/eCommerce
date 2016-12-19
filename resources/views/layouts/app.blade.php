@@ -59,6 +59,30 @@
                 </li>
                 <li><a href="{{ url('/buildings') }}">{{ trans('welcome.all_buildings') }}</a></li>
 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ trans('welcome.rent') }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        @foreach(getBuildingType() as $key=>$type)
+                            <li><a href="{{ url('buildings/search?bu_rent=0&bu_type=') . $key }}">{{ setBuildingType($key) }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ trans('welcome.ownership') }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        @foreach(getBuildingType() as $key=>$type)
+                            <li><a href="{{ url('buildings/search?bu_rent=1&bu_type=') . $key }}">{{ setBuildingType($key) }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">{{ trans('welcome.login') }}</a></li>
