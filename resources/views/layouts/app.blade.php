@@ -64,6 +64,7 @@
                     <li><a href="{{ url('/login') }}">{{ trans('welcome.login') }}</a></li>
                     <li><a href="{{ url('/register') }}">{{ trans('welcome.register') }}</a></li>
                 @else
+                    <li><a href="{{ url('/adminpanel') }}">{{ trans('welcome.dashboard') }}</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>

@@ -26,7 +26,7 @@
                                 <strong>{{ trans('welcome.building_rent') }} : </strong>{{ setBuildingRentType($item->bu_rent) }}
                             </span>
                             <br>
-                            <span><strong>{{ trans('welcome.building_region') }} : </strong>{{ $item->bu_region }}</span>
+                            <span><strong>{{ trans('welcome.building_region') }} : </strong>{{ get_place($item->bu_region) }}</span>
                             <span class="pull-left">
                                 <strong>{{ trans('welcome.building_room_num') }} : </strong>{{ $item->bu_room }}
                             </span>

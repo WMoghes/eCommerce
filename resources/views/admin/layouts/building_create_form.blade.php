@@ -28,7 +28,7 @@
 <div class="form-group{{ $errors->has('bu_region') ? ' has-error' : '' }}">
 
     <div class="col-sm-9 pull-right">
-        {!! Form::text('bu_region', old('bu_region'), ['class' => 'form-control', 'autocomplete' => 'off']) !!}
+        {!! Form::select('bu_region', bu_places(), null, ['class' => 'selectpicker select', 'data-style' => 'btn-white']) !!}
 
         @if ($errors->has('bu_region'))
             <span class="help-block">
@@ -55,7 +55,7 @@
 <div class="form-group{{ $errors->has('bu_room') ? ' has-error' : '' }}">
 
     <div class="col-sm-9 pull-right">
-        {!! Form::text('bu_room', old('bu_room'), ['class' => 'form-control', 'autocomplete' => 'off']) !!}
+        {!! Form::select('bu_room', getRoomsNumber(), null, ['class' => 'selectpicker select', 'data-style' => 'btn-white']) !!}
 
         @if ($errors->has('bu_room'))
             <span class="help-block">

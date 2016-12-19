@@ -84,6 +84,7 @@ return [
     'building_type'                 => 'نوع العقار',
     'building_square'               => 'مساحة العقار',
     'building_status'               => 'حالة العقار',
+    'building_select_region'        => 'أختر منطقة',
     'building_room_num'             => 'عدد الغرف',
     'building_small_desc'           => 'وصف صغير عن العقار',
     'building_long_desc'            => 'وصف مطول للعقار',

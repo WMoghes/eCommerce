@@ -11,6 +11,7 @@
     {!! Html::style('admin/assets/css/pages.css') !!}
     {!! Html::style('website/assets/plugins/rangeSlider/ion.rangeSlider.css') !!}
     {!! Html::style('website/assets/plugins/rangeSlider/ion.rangeSlider.skinHTML5.css') !!}
+    {!! Html::style('admin/assets/plugins/select-2/select2.min.css') !!}
 @endsection
 
 @section('content')
@@ -35,12 +36,20 @@
 @endsection
 
 @section('script')
+    {!! Html::script('admin/assets/plugins/select-2/select2.min.js') !!}
     {!! Html::script('admin/assets/plugins/bootstrap-select/js/bootstrap-select.min.js') !!}
     {!! Html::script('website/assets/plugins/rangeSlider/ion.rangeSlider.min.js') !!}
     <script>
+        $(document).ready(function() {
+            $('.select').select2({
+                dir: 'rtl'
+            });
+        });
+    </script>
+    <script>
         var highest = {{ $info['highestPrice']->bu_price  }};
         var lowest = {{ $info['lowestPrice']->bu_price }};
-
+        console.log('hig : ' + highest + ' and lo ' + lowest);
                 @if(minRange())
                     var to_val = {{ maxRange()  }};
                     var from_val = {{ minRange() }};
@@ -48,8 +57,12 @@
                     var to_val = highest;
                     var from_val = lowest;
                 @endif
-
-$("#range_03").ionRangeSlider({
+                if (to_val == from_val){
+                    var to_val = highest;
+                    var from_val = lowest;
+                }
+        console.log('from : ' + from_val + ' and to ' + to_val);
+        $("#range_03").ionRangeSlider({
             type: "double",
             grid: true,
             min: lowest,

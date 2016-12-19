@@ -46,7 +46,9 @@ class BuildingController extends Controller
         $inputs = $request->all();
         $inputs['user_id'] = Auth::user()->id;
         $building = Building::create($inputs);
-        return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_add_msg'));
+        return redirect()->route('adminpanel.buildings.index')
+                         ->with('status', trans('welcome.building_add_msg'))
+                         ->withInfo($this->getInfo());
     }
 
     /**
@@ -84,7 +86,8 @@ class BuildingController extends Controller
 //        dd($request->all());
         $building = Building::findOrFail($id)->update($request->all());
         return redirect()->route('adminpanel.buildings.index')
-                    ->with('status_for_update_building', trans('welcome.building_edit_msg') . '( ' . $request->bu_name . ' )');
+                    ->with('status_for_update_building', trans('welcome.building_edit_msg') . '( ' . $request->bu_name . ' )')
+                    ->withInfo($this->getInfo());
     }
 
     /**
@@ -96,7 +99,9 @@ class BuildingController extends Controller
     public function destroy($id)
     {
         Building::findOrFail($id)->delete();
-        return redirect()->route('adminpanel.buildings.index')->with('status', trans('welcome.building_remove_msg') );
+        return redirect()->route('adminpanel.buildings.index')
+                         ->with('status', trans('welcome.building_remove_msg') )
+                         ->withInfo($this->getInfo());
     }
 
     public function anyData()
@@ -144,7 +149,7 @@ class BuildingController extends Controller
     }
     public function getActiveBuildings()
     {
-        $building = Building::where('bu_status' , 1)->paginate(6);
+        $building = Building::where('bu_status' , 1)->orderBy('id', 'desc')->paginate(6);
 //        $building = Building::where('bu_status' , 1)->get()->toArray();
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
@@ -173,7 +178,6 @@ class BuildingController extends Controller
         $x = explode(';', $request->range);
         $req = array_except($request->toArray(), ['_token', 'submit']);
         $query = DB::table('buildings')->select('*');
-
         foreach ($req as $key => $value) {
             if($value != null){
                 if($key == 'bu_name'){
@@ -182,15 +186,14 @@ class BuildingController extends Controller
                 }elseif ($key == 'range'){
                     $arr[$key] = $value;
                     $query->whereBetween('bu_price', $x);
-                }elseif($key == 'bu_room' || $key == 'bu_type' || $key == 'bu_rent'){
+                }elseif($key == 'bu_room' || $key == 'bu_type' || $key == 'bu_rent' || $key == 'bu_region'){
                     $arr[$key] = $value;
                     $query->where($key, $value);
                 }
             }
         }
         session(array_except($request->toArray(), ['_token', 'submit']));
-//        dd(array_except($request->toArray(), ['_token', 'submit']));
-        $building = $query->paginate(3)->setPath('')->appends ( $arr);
+        $building = $query->paginate(3)->setPath('')->appends($arr);
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
 }

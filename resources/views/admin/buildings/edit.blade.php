@@ -6,6 +6,7 @@
 
 @section('header')
     {!! Html::style('admin/assets/plugins/bootstrap-select/css/bootstrap-select.min.css') !!}
+    {!! Html::style('admin/assets/plugins/select-2/select2.min.css') !!}
     {!! Html::style('website/assets/ar/css/ar_style.css') !!}
 @endsection
 
@@ -47,4 +48,12 @@
 
 @section('script')
     {!! Html::script('admin/assets/plugins/bootstrap-select/js/bootstrap-select.min.js') !!}
+    {!! Html::script('admin/assets/plugins/select-2/select2.min.js') !!}
+    <script>
+        $(document).ready(function() {
+            $('.select').select2({
+                dir: 'rtl'
+            });
+        });
+    </script>
 @endsection

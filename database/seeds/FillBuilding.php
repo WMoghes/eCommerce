@@ -7,7 +7,7 @@ class FillBuilding extends Seeder
 {
     public function run()
     {
-        for($i = 1; $i <= 100; $i++){
+        for($i = 1; $i <= 250; $i++){
             DB::table('buildings')->insert([
                 'bu_name' => 'العقار السعيد ' . $i,
                 'bu_price' => rand(100000,500000),
@@ -19,7 +19,7 @@ class FillBuilding extends Seeder
                 'bu_longitude' => rand(100000,900000),
                 'bu_latitude' => rand(100000,900000),
                 'bu_status' => 1,
-                'bu_region' => 'منطقة ' . $i,
+                'bu_region' => rand(1,27),
                 'user_id' => rand(1,5),
                 'bu_room' => rand(1,6),
                 'bu_long_desc' => 'وصف طويل للعقار ' . $i,
