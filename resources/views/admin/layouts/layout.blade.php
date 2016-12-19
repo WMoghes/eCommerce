@@ -24,6 +24,7 @@
     <![endif]-->
     {!! Html::script('admin/assets/js/modernizr.min.js') !!}
     @yield('header')
+    {!! Html::style('admin/assets/css/fonts.css') !!}
 </head>
 
 <body class="fixed-left">

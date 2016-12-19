@@ -159,7 +159,19 @@
     </div>
     <label for="bu_long_desc" class="col-sm-3 control-label" style="text-align: right">{{ trans('welcome.building_long_desc') }}</label>
 </div>
-
+<div class="row">
+    <div class="col-md-8">
+        <p>{{ trans('welcome.image_rules') }}</p>
+        <br>
+        <label class="btn btn-primary">
+            {{ trans('welcome.upload_image') }} <input type="file" id="imageUpload" name="image" style="display: none">
+        </label>
+    </div>
+    <div class="col-md-4">
+        <img id="bu_image" src="{{ getSiteSettings('default_image') }}" alt="Your-image" height="300" width="300" class="img-responsive">
+        <br>
+    </div>
+</div>
 <div class="form-group">
     <div class="col-sm-12">
         <button type="submit" class="btn btn-primary pull-right">

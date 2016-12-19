@@ -45,6 +45,9 @@ class BuildingController extends Controller
     {
         $inputs = $request->all();
         $inputs['user_id'] = Auth::user()->id;
+        if($request->file('image')) {
+            $inputs['image'] = uploadImage($inputs['image']);
+        }
         $building = Building::create($inputs);
         return redirect()->route('adminpanel.buildings.index')
                          ->with('status', trans('welcome.building_add_msg'))
@@ -87,8 +90,11 @@ class BuildingController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        dd($request->all());
-        $building = Building::findOrFail($id)->update($request->all());
+        $inputs = $request->all();
+        if($request->file('image')){
+            $inputs['image'] = uploadImage($inputs['image']);
+        }
+        $building = Building::findOrFail($id)->update($inputs);
         return redirect()->route('adminpanel.buildings.index')
                     ->with('status_for_update_building', trans('welcome.building_edit_msg') . '( ' . $request->bu_name . ' )')
                     ->withInfo($this->getInfo());

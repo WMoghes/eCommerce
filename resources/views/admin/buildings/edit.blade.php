@@ -36,7 +36,7 @@
                 <div class="panel-body">
 
                     {!! Form::model($building, ['class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT',
-                                    'url' => route('adminpanel.buildings.update', $building->id)]) !!}
+                                    'url' => route('adminpanel.buildings.update', $building->id), 'files' => true]) !!}
                         @include('admin.layouts.building_edit_form')
                     {!! Form::close() !!}
 
@@ -55,5 +55,15 @@
                 dir: 'rtl'
             });
         });
+        document.getElementById('imageUpload').onchange = function (event) {
+            'use strict';
+            var reader = new FileReader();
+            reader.onload = function () {
+                var dataURL = reader.result;
+                document.getElementById('bu_image').src = dataURL;
+            };
+            console.log(event.target.files[0]);
+            reader.readAsDataURL(event.target.files[0]);
+        };
     </script>
 @endsection

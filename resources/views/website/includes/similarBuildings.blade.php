@@ -5,7 +5,7 @@
                 <a href="{{ route('frontend.buildings.show', $item->id) }}" class="image-popup" title="{{ $item->bu_small_desc }}">
                     <img
                             style="height: 200px"
-                            src="http://www.cement.org/images/default-source/codes-standards/codes_splash.jpg?sfvrsn=0"
+                            src="{{ getImagePath($item->image) }}"
                             class="thumb-img" alt="work-thumbnail">
                 </a>
 
@@ -22,12 +22,14 @@
                 </div>
                 <div class="more-details">
                     <span><strong>{{ trans('welcome.building_type') }} : </strong>{{ setBuildingType($item->bu_type) }}</span>
-                            <span class="pull-left">
+                    <br>
+                            <span>
                                 <strong>{{ trans('welcome.building_rent') }} : </strong>{{ setBuildingRentType($item->bu_rent) }}
                             </span>
                     <br>
                     <span><strong>{{ trans('welcome.building_region') }} : </strong>{{ get_place($item->bu_region) }}</span>
-                            <span class="pull-left">
+                    <br>
+                            <span>
                                 <strong>{{ trans('welcome.building_room_num') }} : </strong>{{ $item->bu_room }}
                             </span>
                     <br>
@@ -38,13 +40,14 @@
             </div>
         </div>
     @endforeach
+    <div class="clear-fix"></div>
     @foreach($similarBuilding_type as $key => $item)
         <div class="col-sm-6 col-lg-3 col-md-4 mobiles" style="margin-bottom: 15px">
             <div class="product-list-box thumb">
                 <a href="{{ route('frontend.buildings.show', $item->id) }}" class="image-popup" title="{{ $item->bu_small_desc }}">
                     <img
                             style="height: 200px"
-                            src="http://www.cement.org/images/default-source/codes-standards/codes_splash.jpg?sfvrsn=0"
+                            src="{{ getImagePath($item->image) }}"
                             class="thumb-img" alt="work-thumbnail">
                 </a>
 
@@ -61,12 +64,14 @@
                 </div>
                 <div class="more-details">
                     <span><strong>{{ trans('welcome.building_type') }} : </strong>{{ setBuildingType($item->bu_type) }}</span>
-                            <span class="pull-left">
+                    <br>
+                            <span>
                                 <strong>{{ trans('welcome.building_rent') }} : </strong>{{ setBuildingRentType($item->bu_rent) }}
                             </span>
                     <br>
                     <span><strong>{{ trans('welcome.building_region') }} : </strong>{{ get_place($item->bu_region) }}</span>
-                            <span class="pull-left">
+                    <br>
+                            <span>
                                 <strong>{{ trans('welcome.building_room_num') }} : </strong>{{ $item->bu_room }}
                             </span>
                     <br>

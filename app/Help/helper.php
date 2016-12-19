@@ -1,5 +1,20 @@
 <?php
 
+function uploadImage($request){
+    if($file = $request){
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move('website/images', $filename);
+        return $filename;
+    }
+}
+
+function getImagePath($imageName){
+    if($imageName != ''){
+        return URL::to('website/images') . '/' . $imageName;
+    }
+    return getSiteSettings('default_image');
+}
+
 function getSiteSettings($siteSetting = 'site_name')
 {
     return \App\SiteSetting::where('namesetting', $siteSetting)->first()->value;

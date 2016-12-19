@@ -43,13 +43,8 @@
                 <div class="card-box product-detail-box">
                     <div class="row">
                         <div class="col-sm-4">
-                            <div class="sp-loading"><img src="assets/images/sp-loading.gif" alt=""><br>LOADING
-                                IMAGES
-                            </div>
-                            <div class="sp-wrap">
-                                <a href="assets/images/products/big/1.jpg">
-                                    <img src="assets/images/products/big/1.jpg" alt="">
-                                </a>
+                            <div class="sp-loading">
+                                <img src="{{ getImagePath($building->image) }}" width="300" height="300">
                             </div>
                         </div>
 

@@ -20,6 +20,7 @@
     {!! Html::style('website/assets/ar/css/style.css') !!}
     @yield('header')
     {!! Html::style('website/assets/ar/css/ar_style.css') !!}
+    {!! Html::style('admin/assets/css/fonts.css') !!}
 
 </head>
 <body data-spy="scroll" data-target="#navbar-menu" style="direction: rtl">
