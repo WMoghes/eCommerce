@@ -89,6 +89,7 @@ return [
     'building_long_desc'            => 'وصف مطول للعقار',
     'building_meta'                 => 'كلمات دالالية عن العقار',
     'building_rent_select'          => 'أختر نوع الإيجار',
+    'building_region'               => 'منطقة العقار',
     'building_rent'                 => ' نوع الإيجار',
     'building_type_select'          => 'أختر نوع العقار',
     'building_select_rooms'         => 'حدد عدد الغرف',
@@ -104,6 +105,7 @@ return [
     'ownership'                     => 'تمليك',
     'all_buildings'                 => 'كل العقارات',
     'buildings_choice'              => 'بحث عن ',
+    'meter'                         => 'متر مربع',
 
 
     /*
@@ -121,6 +123,7 @@ return [
     'remove_msg'                    => 'تم الحذف بنجاح',
     'success_msg'                   => 'تمت العملية بنجاح',
     'no_buildings_founded_msg'      => 'لا يوجد أي عقارات حاليا',
+    'no_found_msg'                      => 'لا يوجد أي عقار مطابق لهذة الشروط',
 
     /*
     |--------------------------------------------------------------------------

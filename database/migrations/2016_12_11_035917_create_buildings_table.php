@@ -23,6 +23,7 @@ class CreateBuildingsTable extends Migration
             $table->string('bu_small_desc');
             $table->text('bu_long_desc');
             $table->string('bu_meta');
+            $table->string('bu_region');
             $table->tinyInteger('bu_status');
             $table->string('bu_longitude', 30);
             $table->string('bu_latitude', 30);

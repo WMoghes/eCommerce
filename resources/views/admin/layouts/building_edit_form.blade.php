@@ -25,6 +25,20 @@
     <label for="bu_price" class="col-sm-3 control-label"  style="text-align: right">{{ trans('welcome.building_price') }}</label>
 </div>
 
+<div class="form-group{{ $errors->has('bu_region') ? ' has-error' : '' }}">
+
+    <div class="col-sm-9 pull-right">
+        {!! Form::text('bu_region', $building->bu_region, ['class' => 'form-control', 'autocomplete' => 'off']) !!}
+
+        @if ($errors->has('bu_region'))
+            <span class="help-block">
+                <strong>{{ $errors->first('bu_region') }}</strong>
+            </span>
+        @endif
+    </div>
+    <label for="bu_region" class="col-sm-3 control-label"  style="text-align: right">{{ trans('welcome.building_region') }}</label>
+</div>
+
 <div class="form-group{{ $errors->has('bu_square') ? ' has-error' : '' }}">
     <div class="col-sm-9 pull-right">
         {!! Form::text('bu_square', $building->bu_square, ['class' => 'form-control', 'autocomplete' => 'off']) !!}

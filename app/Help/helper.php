@@ -35,18 +35,20 @@ function getRoomsNumber(){
     }
     return $array;
 }
-
-function paginateCollection($collection, $perPage = 15, $pageName = 'page', $page = null)
-{
-    $page = $page ?: \Illuminate\Pagination\Paginator::resolveCurrentPage($pageName);
-    $page = (int) max(1, $page); // Handle pageResolver returning null and negative values
-    $path = \Illuminate\Pagination\Paginator::resolveCurrentPath();
-
-    return new \Illuminate\Pagination\LengthAwarePaginator(
-        $collection->forPage($page, $perPage),
-        count($collection),
-        $perPage,
-        $page,
-        compact('path', 'pageName')
-    );
+function retriveValue($fieldName){
+    if(Session::has($fieldName)){
+        return Session($fieldName);
+    }
+}
+function minRange(){
+    if(Session::has('range')){
+        $min = explode(';', Session('range'));
+        return $min[0];
+    }
+}
+function maxRange(){
+    if(Session::has('range')){
+        $max = explode(';', Session('range'));
+        return $max[1];
+    }
 }

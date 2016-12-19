@@ -170,10 +170,10 @@ class BuildingController extends Controller
     }
     public function search(Request $request)
     {
-        // to split the string
         $x = explode(';', $request->range);
         $req = array_except($request->toArray(), ['_token', 'submit']);
         $query = DB::table('buildings')->select('*');
+
         foreach ($req as $key => $value) {
             if($value != null){
                 if($key == 'bu_name'){
@@ -182,21 +182,15 @@ class BuildingController extends Controller
                 }elseif ($key == 'range'){
                     $arr[$key] = $value;
                     $query->whereBetween('bu_price', $x);
-                }else{
+                }elseif($key == 'bu_room' || $key == 'bu_type' || $key == 'bu_rent'){
                     $arr[$key] = $value;
                     $query->where($key, $value);
                 }
             }
         }
-
-        $building = $query->paginate(3);
-//        $building->setPath('search');
-//        $building = Building::where([
-//                                    ['bu_name', 'like', '%' . $request->bu_name . '%'],
-//                                    ['bu_type', $request->bu_type] ,
-//                                    ['bu_rent', $request->bu_rent] ,
-//                                    ['bu_room', $request->bu_room]
-//                                ])->whereBetween('bu_price', $x)->get();
+        session(array_except($request->toArray(), ['_token', 'submit']));
+//        dd(array_except($request->toArray(), ['_token', 'submit']));
+        $building = $query->paginate(3)->setPath('')->appends ( $arr);
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
 }
