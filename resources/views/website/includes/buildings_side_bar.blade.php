@@ -3,7 +3,7 @@
         {{ trans('welcome.advanced_search') }}
     </div>
     <div class="panel panel-body" style="margin-bottom: 0">
-        {!! Form::open(['method' => 'post', 'role' => 'form', 'url' => route('frontend.buildings.search')]) !!}
+        {!! Form::open(['method' => 'get', 'role' => 'form', 'url' => route('frontend.buildings.search')]) !!}
             <div class="form-group">
                 {!! Form::text('bu_name', retriveValue('bu_name'), ['class' => 'form-control', 'placeholder' => trans('welcome.building_name')]) !!}
             </div>
