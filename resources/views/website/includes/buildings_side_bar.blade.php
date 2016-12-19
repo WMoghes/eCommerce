@@ -3,23 +3,23 @@
         {{ trans('welcome.advanced_search') }}
     </div>
     <div class="panel panel-body" style="margin-bottom: 0">
-        {!! Form::open(['method' => 'get', 'role' => 'form', 'url' => route('frontend.buildings.search')]) !!}
+        {!! Form::open(['method' => 'post', 'role' => 'form', 'url' => route('frontend.buildings.search')]) !!}
             <div class="form-group">
-                {!! Form::text('bu_name', old('bu_name'), ['class' => 'form-control', 'placeholder' => trans('welcome.building_name')]) !!}
+                {!! Form::text('bu_name', retriveValue('bu_name'), ['class' => 'form-control', 'placeholder' => trans('welcome.building_name')]) !!}
             </div>
             <div class="form-group">
-                {!! Form::select('bu_type', getBuildingType(), old('bu_type'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_type_select')]) !!}
+                {!! Form::select('bu_type', getBuildingType(), retriveValue('bu_type'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_type_select')]) !!}
             </div>
             <div class="form-group">
-                {!! Form::select('bu_rent', getBuildingRentType(), old('bu_rent'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_rent_select')]) !!}
+                {!! Form::select('bu_rent', getBuildingRentType(), retriveValue('bu_rent'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_rent_select')]) !!}
             </div>
             <div class="form-group">
-                {!! Form::select('bu_room', getRoomsNumber(), old('bu_room'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_rooms')]) !!}
+                {!! Form::select('bu_room', getRoomsNumber(), retriveValue('bu_room'), ['class' => 'selectpicker', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_rooms')]) !!}
             </div>
             <div class="form-group" style="direction: ltr">
                 <label class="pull-right" for="range_03">{{ trans('welcome.select_price') }}</label>
                 <br>
-                <input name="range" type="text" id="range_03" value="{{ old('range') }}">
+                <input name="range" type="text" id="range_03" min="{{ minRange() }}" max="{{ maxRange() }}">
             </div>
 {{--        {!! Form::submit(trans('welcome.search'), ['class' => 'btn btn-primary pull-left']) !!}--}}
             <button type="submit" class="btn btn-primary pull-left">{{ trans('welcome.search') }}</button>

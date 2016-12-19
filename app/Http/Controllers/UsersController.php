@@ -50,7 +50,7 @@ class UsersController extends Controller
 
         $inputs['password'] = bcrypt($request->password);
         $user = User::create($inputs);
-        return redirect()->route('adminpanel.users.index')->with('status', trans('welcome.created_msg'));
+        return redirect()->route('adminpanel.users.create')->with('status', trans('welcome.created_msg'));
     }
 
     /**

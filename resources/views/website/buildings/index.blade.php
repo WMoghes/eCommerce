@@ -25,8 +25,7 @@
                 <div class="col-md-9" style="background-color: #95A8B7">
                     @include('website.includes.buildings_show')
                     <div class="text-center">
-                        {{ $building->appends(Request::except('page'))->render() }}
-{{--                        {{ $building->appends(Request::except('page'))->links() }}--}}
+                        {{ $building->render() }}
                     </div>
                 </div>
 
@@ -41,13 +40,22 @@
     <script>
         var highest = {{ $info['highestPrice']->bu_price  }};
         var lowest = {{ $info['lowestPrice']->bu_price }};
-        $("#range_03").ionRangeSlider({
+
+                @if(minRange())
+                    var to_val = {{ maxRange()  }};
+                    var from_val = {{ minRange() }};
+                @else
+                    var to_val = highest;
+                    var from_val = lowest;
+                @endif
+
+$("#range_03").ionRangeSlider({
             type: "double",
             grid: true,
             min: lowest,
             max: highest,
-            from: lowest,
-            to: highest,
+            from: from_val,
+            to: to_val,
             // don't forget to insert rtl unicode before add 'ج‎'
             prefix: "ج‎"
         });

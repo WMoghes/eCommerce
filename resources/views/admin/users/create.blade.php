@@ -34,8 +34,8 @@
                 <div class="panel-heading">{{ trans('welcome.register') }}</div>
                 <div class="panel-body">
 
-                    {!! Form::open(['class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST',
-                                    'url' => route('adminpanel.users.store')]) !!}
+                    {!! Form::open(['class' => 'form-horizontal', 'role' => 'form','id' => 'user_create', 'method' => 'POST'
+                                    , 'url' => route('adminpanel.users.store') ]) !!}
                         @include('admin.layouts.user_create_form')
                     {!! Form::close() !!}
 
@@ -47,4 +47,16 @@
 
 @section('script')
     {!! Html::script('admin/assets/plugins/bootstrap-select/js/bootstrap-select.min.js') !!}
+    <script>
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('adminpanel.users.store') }}',
+            data: {
+                    name: 'welzzzz', email: 'xxxx@ddd.dd', password: '321321', admin: 1
+            } ,
+            success: function(){
+                alert('Done..');
+            }
+        });
+    </script>
 @endsection
