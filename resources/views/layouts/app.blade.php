@@ -21,10 +21,14 @@
     @yield('header')
     {!! Html::style('website/assets/ar/css/ar_style.css') !!}
     {!! Html::style('admin/assets/css/fonts.css') !!}
-
+    <style>
+        .i-padding {
+            padding-left: 10px;
+        }
+    </style>
+    @yield('end_of_header')
 </head>
 <body data-spy="scroll" data-target="#navbar-menu" style="direction: rtl">
-
 
 <!-- Navbar -->
 <div class="navbar navbar-custom sticky navbar-fixed-top" role="navigation" id="sticky-nav">
@@ -43,7 +47,7 @@
 
             <!-- LOGO -->
             <a class="navbar-brand logo" href="{{ url('/') }}">
-                WM<span class="text-custom">O</span>GHES
+                WM<span class="text-custom" style="color: #5d9cec">O</span>GHES
             </a>
 
         </div>
@@ -59,7 +63,7 @@
                     <a href="{{ url('/') }}" class="nav-link">{{ trans('welcome.home') }}</a>
                 </li>
                 <li><a href="{{ url('/buildings') }}">{{ trans('welcome.all_buildings') }}</a></li>
-
+                <!-- Rent Dropdown Menu-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ trans('welcome.rent') }} <span class="caret"></span>
@@ -67,11 +71,16 @@
 
                     <ul class="dropdown-menu" role="menu">
                         @foreach(getBuildingType() as $key=>$type)
-                            <li><a href="{{ url('buildings/search?bu_rent=0&bu_type=') . $key }}">{{ setBuildingType($key) }}</a></li>
+                            <li>
+                                <a href="{{ url('buildings/search?bu_rent=0&bu_type=') . $key }}">
+                                    <i class="ti-pin-alt i-padding"></i>{{ setBuildingType($key) }}
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </li>
 
+                <!-- Ownership Dropdown Menu-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ trans('welcome.ownership') }} <span class="caret"></span>
@@ -79,7 +88,11 @@
 
                     <ul class="dropdown-menu" role="menu">
                         @foreach(getBuildingType() as $key=>$type)
-                            <li><a href="{{ url('buildings/search?bu_rent=1&bu_type=') . $key }}">{{ setBuildingType($key) }}</a></li>
+                            <li>
+                                <a href="{{ url('buildings/search?bu_rent=1&bu_type=') . $key }}">
+                                    <i class="ti-pin-alt i-padding"></i>{{ setBuildingType($key) }}
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </li>
@@ -89,14 +102,23 @@
                     <li><a href="{{ url('/login') }}">{{ trans('welcome.login') }}</a></li>
                     <li><a href="{{ url('/register') }}">{{ trans('welcome.register') }}</a></li>
                 @else
-                    <li><a href="{{ url('/adminpanel') }}">{{ trans('welcome.dashboard') }}</a></li>
+                    <!-- Info About User and logout Dropdown Menu-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('welcome.logout') }}</a></li>
+                            <li>
+                                <a href="{{ url('/adminpanel') }}">
+                                    <i class="ti-home i-padding"></i>{{ trans('welcome.dashboard') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}">
+                                    <i class="fa fa-btn fa-sign-out i-padding"></i>{{ trans('welcome.logout') }}
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endif
@@ -109,6 +131,8 @@
     <!-- end container -->
 </div>
 <!-- End navbar-custom -->
+
+@yield('content_without_container')
 
 <div class="container">
     <div class="row" style="margin-top: 100px">

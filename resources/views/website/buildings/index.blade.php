@@ -45,6 +45,9 @@
                 dir: 'rtl'
             });
         });
+//        var findClassHere = document.getElementById('sticky-nav-sticky-wrapper');
+//        findClassHere.removeAttribute("class");
+        console.log(document.body.firstElementChild);
     </script>
     <script>
         var highest = {{ $info['highestPrice']->bu_price  }};

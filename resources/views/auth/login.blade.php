@@ -4,8 +4,12 @@
     {{ trans('welcome.login') }}
 @endsection
 
+@section('header')
+    {!! Html::style('admin/assets/css/bootstrap-rtl.min.css') !!}
+@endsection
+
 @section('content')
-    <div class="row">
+    <div class="row" style="margin-top: 20px">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('welcome.login') }}</div>
@@ -14,7 +18,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
+                            <label for="email" class="col-sm-3 control-label" style="text-align: right">{{ trans('welcome.email') }}</label>
                             <div class="col-sm-9">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
@@ -24,10 +28,10 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="email" class="col-sm-3 control-label">{{ trans('welcome.email') }}</label>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-sm-3 control-label" style="text-align: right">{{ trans('welcome.password') }}</label>
                             <div class="col-sm-9">
                                 <input id="password" type="password" class="form-control" name="password">
 
@@ -37,7 +41,6 @@
                                     </span>
                                 @endif
                             </div>
-                            <label for="password" class="col-sm-3 control-label">{{ trans('welcome.password') }}</label>
                         </div>
 
                         <div class="form-group">
@@ -50,11 +53,10 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-8">
+                            <div class="col-sm-8 col-sm-offset-4">
                                 <button type="submit" class="btn btn-primary pull-left">
                                     <i class="fa fa-btn fa-sign-in"></i> {{ trans('welcome.login') }}
                                 </button>
-
                                 <a class="btn btn-link pull-left" href="{{ url('/password/reset') }}">{{ trans('welcome.forget') }}</a>
                             </div>
                         </div>

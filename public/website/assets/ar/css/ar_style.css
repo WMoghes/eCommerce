@@ -4,14 +4,15 @@
 .navbar-custom {
     background-color: #2f3e47;
 }
+.text-custom {
+    color: #5d9cec;
+    font-size: 18px;
+}
 .dropdown-menu {
     text-align: right;
     float: right;
     left: auto;
 }
-/*.pull-right, .navbar-right {*/
-    /*float: right !important;*/
-/*}*/
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
     text-align: right;
 }
@@ -44,7 +45,7 @@
     width: 220px;
 }
 .silderBar {
-    width: 420px;
+    width: 445px;
 }
 .product-list-box .price-tag {
     width: 90px;
@@ -66,15 +67,9 @@ hr {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-/*.btn{*/
-    /*background-color: #337ab7;*/
-    /*color: white;*/
-/*}*/
-/*.btn:hover{*/
-    /*background-color: #337ab7;*/
-    /*color: white;*/
-/*}*/
-/*.btn:focus{*/
-    /*background-color: #337ab7;*/
-    /*color: white;*/
-/*}*/
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: transparent;
+}
+.sticky-wrapper.is-sticky .navbar-custom .logo span.text-custom {
+    color: #5d9cec !important;
+}
