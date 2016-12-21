@@ -15,7 +15,7 @@ class CreateBuildingsTable extends Migration
         Schema::create('buildings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bu_name', 100);
-            $table->integer('bu_price', 25);
+            $table->integer('bu_price');
             $table->tinyInteger('bu_rent');
             $table->string('bu_square', 100);
             $table->tinyInteger('bu_room');
