@@ -134,6 +134,7 @@ class BuildingController extends Controller
             ->editColumn('created_at', function($model) { return $model->created_at->diffForHumans(); })
             ->editColumn('bu_type', function($model) { return setBuildingType($model->bu_type); })
             ->editColumn('bu_status', function($model) { return setStatus($model->bu_status); })
+            ->orderBy('created_at', 'desc')
             ->make(true);
     }
     private function getInfo(){
@@ -166,7 +167,7 @@ class BuildingController extends Controller
     public function getBuildingType($id)
     {
         if(in_array($id, [0,1,2])){
-            $building = Building::where('bu_type', 0)->paginate(9);
+            $building = Building::where('bu_type', $id)->orderBy('created_at','desc')->paginate(9);
             $info = $this->getInfo();
             return view('website.buildings.index', compact('building', 'info'));
         }else {
@@ -176,7 +177,7 @@ class BuildingController extends Controller
     public function getTypeRent($id)
     {
         if(in_array($id, [0,1])){
-            $building = Building::where('bu_rent', $id)->paginate(9);
+            $building = Building::where('bu_rent', $id)->orderBy('created_at','desc')->paginate(9);
             $info = $this->getInfo();
             return view('website.buildings.index', compact('building', 'info'));
         }else{
@@ -203,7 +204,7 @@ class BuildingController extends Controller
             }
         }
         session(array_except($request->toArray(), ['_token', 'submit']));
-        $building = $query->paginate(9)->setPath('')->appends($arr);
+        $building = $query->orderBy('created_at','desc')->paginate(9)->setPath('')->appends($arr);
         return view('website.buildings.index', compact('building'))->withInfo($this->getInfo());
     }
 
