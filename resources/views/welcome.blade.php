@@ -37,7 +37,7 @@
                             <div class="home-wrapper home-wrapper-alt">
                                 <h2 class="font-light text-white">مرحبا بكم في الموقع الأشهر في الشرق الأوسط للعقارات</h2>
                                 <h4 class="text-white">الان يمكنكم البحث عن أي عقارت من خلال تحديد البحث بالمكان و السعر الذي تريدة مع تحديد نوع العملية بالطبع سؤاء كانت إيجار أو تمليك. أضغط علي الزر ادناة لأكتشاف المزيد</h4>
-                                <a href="http://themeforest.net/item/ubold-responsive-web-app-kit/13489470?ref=coderthemes"
+                                <a href="#"
                                    target="_blank" class="btn btn-custom">أكتشف الان</a>
                             </div>
                         </div>
