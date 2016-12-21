@@ -19,6 +19,9 @@
         .bg-img-1 {
             background: url("{{ URL::to('website/images/website_images/background/dg.jpg') }}") no-repeat;
         }
+        .bg-img-2 {
+             background-color: #2f3e47;
+        }
         .navbar-custom {
             background-color: transparent;
         }
@@ -48,6 +51,7 @@
     </section>
     <!-- END HOME -->
 
+    <!-- Search -->
     <section class="section">
         <div class="container">
             <div class="row">
@@ -60,19 +64,19 @@
                                 <div class="row">
                                     {!! Form::open(['method' => 'get', 'role' => 'form', 'url' => route('frontend.buildings.search')]) !!}
                                     <div class="form-group">
-                                        {!! Form::text('bu_name', retriveValue('bu_name'), ['class' => 'form-control', 'placeholder' => trans('welcome.building_name')]) !!}
+                                        {!! Form::text('bu_name', retrieveValue('bu_name'), ['class' => 'form-control', 'placeholder' => trans('welcome.building_name')]) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::select('bu_type', getBuildingType(), retriveValue('bu_type'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_type_select')]) !!}
+                                        {!! Form::select('bu_type', getBuildingType(), retrieveValue('bu_type'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_type_select')]) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::select('bu_rent', getBuildingRentType(), retriveValue('bu_rent'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_rent_select')]) !!}
+                                        {!! Form::select('bu_rent', getBuildingRentType(), retrieveValue('bu_rent'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_rent_select')]) !!}
                                     </div>
                                     <div class="form-group ">
-                                        {!! Form::select('bu_room', getRoomsNumber(), retriveValue('bu_room'), ['class' => 'selectpicker select','data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_rooms')]) !!}
+                                        {!! Form::select('bu_room', getRoomsNumber(), retrieveValue('bu_room'), ['class' => 'selectpicker select','data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_rooms')]) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::select('bu_region', bu_places(), retriveValue('bu_region'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_region')]) !!}
+                                        {!! Form::select('bu_region', bu_places(), retrieveValue('bu_region'), ['class' => 'selectpicker select', 'data-style' => 'btn-white', 'placeholder' => trans('welcome.building_select_region')]) !!}
                                     </div>
                                     <div class="form-group" style="direction: ltr">
                                         <label class="pull-right" for="range_03">{{ trans('welcome.select_price') }}</label>
@@ -97,6 +101,23 @@
             </div>
         </div>
     </section>
+    <!-- END Search -->
+
+    <!-- Display Buildings -->
+    <section class="bg-img-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="text-center">
+                        <h1 style="color: white">{{ trans('welcome.building_latest') }}</h1>
+                    </div>
+                    @include('website.includes.buildings_show_to_homepage')
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Display Buildings -->
 @endsection
 
 @section('content')
@@ -112,6 +133,11 @@
             $('.select').select2({
                 dir: 'rtl'
             });
+//            $('.full-screen').height($(window).height);
+        });
+        $(function(){
+            'use strict';
+            $('.home-fullscreen').height($(window).height());
         });
     </script>
     <script>
@@ -144,6 +170,5 @@
     <script>
         var sliderBar = document.getElementsByClassName('irs')[1].childNodes[0];
         sliderBar.classList.add('silderBar');
-
     </script>
 @endsection

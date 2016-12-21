@@ -153,5 +153,6 @@ return [
     'search'                        => 'بحث',
     'advanced_search'               => 'بحث متقدم',
     'select_price'                  => 'حدد السعر',
+    'building_latest'               => 'أحدث العقارات',
 
 ];

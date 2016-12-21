@@ -210,12 +210,13 @@ class BuildingController extends Controller
 
     public function welcomeInfo()
     {
+        $building = DB::table('buildings')->orderBy('created_at', 'desc')->take(8)->get();
         $lowestPrice = DB::table('buildings')->orderBy('bu_price', 'asc')->first();
         $highestPrice = DB::table('buildings')->orderBy('bu_price', 'desc')->first();
         $arr = [
             'lowestPrice'           => $lowestPrice,
             'highestPrice'          => $highestPrice
         ];
-        return view('welcome')->withInfo($arr);
+        return view('welcome', compact('building'))->withInfo($arr);
     }
 }
